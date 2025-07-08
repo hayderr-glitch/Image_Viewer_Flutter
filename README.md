@@ -18,7 +18,7 @@ A simple Flutter application that dynamically loads and displays all images from
   <br><br>
   <img src="screenshots/Screenshot3.png" width="300" alt="App Screenshot 3">
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="screenshots/Screenshot4.png" width="300" alt="App Screenshot 4">
+  <img src="screenshots/Screenshot.png" width="300" alt="App Screenshot">
 </p>
 
 ## Getting Started

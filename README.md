@@ -12,13 +12,13 @@ A simple Flutter application that dynamically loads and displays all images from
 ## Screenshots
 
 <p align="center">
-  <img src="screenshots/Screenshot1.png" width="300" alt="App Screenshot 1">
+  <img src="screenshots\images\Screenshot.png" width="300" alt="App Screenshot 1">
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="screenshots/Screenshot2.png" width="300" alt="App Screenshot 2">
+  <img src="screenshots\images\Screenshot2.png" width="300" alt="App Screenshot 2">
   <br><br>
-  <img src="screenshots/Screenshot3.png" width="300" alt="App Screenshot 3">
+  <img src="screenshots\images\Screenshot3.png" width="300" alt="App Screenshot 3">
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="screenshots/Screenshot.png" width="300" alt="App Screenshot">
+  <img src="screenshots\images\Screenshot.png" width="300" alt="App Screenshot">
 </p>
 
 ## Getting Started

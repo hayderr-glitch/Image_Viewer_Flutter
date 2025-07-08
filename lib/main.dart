@@ -1,4 +1,6 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,11 +32,29 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final List<String> _imageAssets = [
-    'assets/images/image1.jpg',
-    'assets/images/image2.jpg',
-  ];
+  List<String> _imageAssets = [];
   int _currentImageIndex = 0;
+  bool _isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadImages();
+  }
+
+  Future<void> _loadImages() async {
+    final manifestContent = await rootBundle.loadString('AssetManifest.json');
+    final Map<String, dynamic> manifestMap = json.decode(manifestContent);
+
+    final imagePaths = manifestMap.keys
+        .where((String key) => key.startsWith('assets/images/'))
+        .toList();
+
+    setState(() {
+      _imageAssets = imagePaths;
+      _isLoading = false;
+    });
+  }
 
   void _switchImage() {
     setState(() {
@@ -49,9 +69,15 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(child: Image.asset(_imageAssets[_currentImageIndex])),
+      body: Center(
+        child: _isLoading
+            ? const CircularProgressIndicator()
+            : _imageAssets.isEmpty
+            ? const Text('No images found in assets/images/')
+            : Image.asset(_imageAssets[_currentImageIndex]),
+      ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _switchImage,
+        onPressed: _imageAssets.length > 1 ? _switchImage : null,
         tooltip: 'Switch Image',
         child: const Icon(Icons.swap_horiz),
       ),

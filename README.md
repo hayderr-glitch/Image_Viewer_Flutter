@@ -21,8 +21,6 @@ A simple Flutter application that dynamically loads and displays all images from
   <img src="screenshots/Screenshot4.png" width="300" alt="App Screenshot 4">
 </p>
 
-*Note: You will need to create a `screenshots` folder in the project root and add your own screenshot images.*
-
 ## Getting Started
 
 To get a local copy up and running, follow these simple steps.
